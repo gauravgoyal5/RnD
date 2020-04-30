@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "kendo-ui-example-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/kendoUiExample/KendoUiExampleWebPart.js",
+          "manifest": "./src/webparts/kendoUiExample/KendoUiExampleWebPart.manifest.json"
+        }
+      ]
+    }
+  },
+  "externals": {
+    "jquery": {
+      "path": "https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js",
+      "globalName": "jquery"
+    },
+
+    "angular": {
+      "path": "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.5/angular.min.js",
+      "globalName": "angular",
+      "globalDependencies": [
+        "jquery"
+      ]
+    },
+
+    "kendo-ui": {
+      "path": "https://kendo.cdn.telerik.com/2020.1.406/js/kendo.all.min.js",
+      "globalName": "kendo-ui",
+      "globalDependencies": [
+        "jquery",
+        "angular"
+      ]
+    }
+  },
+  "localizedResources": {
+    "KendoUiExampleWebPartStrings": "lib/webparts/kendoUiExample/loc/{locale}.js"
+  }
+}
